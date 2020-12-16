@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Sweet Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div style="text-align: center; padding-top: 20px;padding-bottom: 20px;"> Hi {{ user.username }}!
+  <br>
+  <div style="padding-top: 10px;"><img
+      src="https://media1.giphy.com/media/2AYQQJsqDrDHy/200w.webp?cid=ecf05e475zvzknwcb81xs7yku5f376jomhhtdfzd2d3ung4m&rid=200w.webp">
+  </div>
+  <br>
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png"
+    style="width:200px; align-content: center;">
+  <br>
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+</div>
+{% else %}
+<div style="text-align: center;">
+
+  <p>Welcome
+    Back!!</p>
+  <img
+    src="https://media3.giphy.com/media/fNZzlhetWttyU/200w.webp?cid=ecf05e47xebse0nossq41k3ouhz6744nd6gwuel8g1vdfhb5&rid=200w.webp">
+  <br>
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png"
+    style="width:200px; align-content: center;">
+  <br>
+  <a href="{% url 'login' %}">Log In</a>
+
+
+</div>
+
+{% endif %}
+{% endblock %}
